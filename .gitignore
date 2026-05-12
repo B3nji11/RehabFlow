@@ -89,6 +89,9 @@ log.txt
 *.pb
 *.pth
 *.onnx
+*.mp4
+*.avi
+*.mov
 
 # Misc
 .cache/
