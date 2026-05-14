@@ -96,3 +96,7 @@ log.txt
 # Misc
 .cache/
 .parcel-cache
+
+
+UI-PRMD-dataset/
+REHAB24-6-dataset/
