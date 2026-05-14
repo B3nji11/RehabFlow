@@ -27,7 +27,7 @@ def calculate_angle(a, b, c):
     return float(np.degrees(np.arccos(np.clip(cosine, -1.0, 1.0))))
 
 def create_header():
-    cols = ["vid_id", "camera_id", "rep_id", "exercise_id", "person_id", "correctness"]
+    cols = ["vid_id", "camera_id", "rep_id", "person_id", "correctness"]
     for i in range(NUM_FRAMES):
         for angle in ANGLE_NAMES:
             cols.append(f"frame_{i}_{angle}")
@@ -39,7 +39,7 @@ def main(input_csv: str, output_csv: str):
     # only keep landmarks which are in squat landmarks
     df.drop(columns=[col for col in df.columns if "visibility" in col], inplace=True)
 
-    metadata = df.iloc[:, :6] # here metadata is the first 6 columns
+    metadata = df.iloc[:, [0,1,2,4,5]] # here metadata is the first 6 columns
     df = df[[col for col in df.columns if any(f"_landmark_{x}_" in col for x in SQUAT_LANDMARKS.values())]]
 
     with open(output_csv, mode='w', newline='') as csv_file:
