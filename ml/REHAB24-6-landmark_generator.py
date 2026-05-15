@@ -80,9 +80,9 @@ def generate_data(video_file: str, output_file: str, list_of_segments):
                                             timestamp_ms)
                     
                     
-                    if pose_landmarker_result.pose_landmarks:
+                    if pose_landmarker_result.pose_world_landmarks:
                         current_frame = []
-                        for landmark in pose_landmarker_result.pose_landmarks[0]:
+                        for landmark in pose_landmarker_result.pose_world_landmarks[0]:
                             current_frame.append(landmark.x)
                             current_frame.append(landmark.y)
                             current_frame.append(landmark.z)
