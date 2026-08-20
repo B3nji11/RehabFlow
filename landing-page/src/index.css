@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   Design tokens. Tailwind v4 reads these and generates the matching utilities
+   (bg-brand-600, text-ink-700, font-sans, animate-fade-up, ...).
+   Change a value here and it changes everywhere on the page.
+--------------------------------------------------------------------------- */
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+
+  /* Accent - sampled from the RehabFlow logo. The only saturated colour here. */
+  --color-brand-50: #eefaf8;
+  --color-brand-100: #d2f3ef;
+  --color-brand-200: #a5e7e0;
+  --color-brand-300: #6ed7cd;
+  --color-brand-400: #35c6ba;  /* logo mark, bright teal */
+  --color-brand-500: #1caea3;
+  --color-brand-600: #0d8f85;
+  --color-brand-700: #0c7570;  /* buttons - 5.5:1 on white */
+  --color-brand-800: #125f66;  /* logo mark, deep teal */
+  --color-brand-900: #124c57;
+
+  /* Neutrals - ink-800 is the exact grey of the logo wordmark */
+  --color-ink-50: #f6f8f9;
+  --color-ink-100: #eef1f3;
+  --color-ink-200: #dee4e7;
+  --color-ink-300: #c0cace;
+  --color-ink-400: #93a1a8;
+  --color-ink-500: #63737a;
+  --color-ink-600: #54636a;
+  --color-ink-700: #3f4c52;
+  --color-ink-800: #2f3e43;
+  --color-ink-900: #1c2226;
+
+  --animate-fade-up: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* stop the sticky header from covering anchor targets */
+    scroll-padding-top: 6rem;
+  }
+
+  body {
+    background-color: #ffffff;
+    color: var(--color-ink-700);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: var(--color-brand-100);
+    color: var(--color-brand-900);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand-600);
+    outline-offset: 2px;
+  }
+
+  h1, h2, h3, h4 {
+    color: var(--color-ink-900);
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Respect the OS setting - no motion for anyone who has asked for none. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
