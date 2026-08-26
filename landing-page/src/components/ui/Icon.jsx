@@ -82,6 +82,15 @@ const paths = {
       <path d="M12 16.6h.01" />
     </>
   ),
+  linkedin: (
+    <>
+      <rect x="3.2" y="3.2" width="17.6" height="17.6" rx="3" />
+      <path d="M8 10.6v6" />
+      <path d="M8 7.9h.01" />
+      <path d="M12.2 16.6v-6" />
+      <path d="M12.2 13.4a2.6 2.6 0 0 1 5.2 0v3.2" />
+    </>
+  ),
   gauge: (
     <>
       <path d="M4.4 17a8.4 8.4 0 1 1 15.2 0" />

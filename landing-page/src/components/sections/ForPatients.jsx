@@ -7,18 +7,18 @@ import PhoneMock from '../mocks/PhoneMock.jsx'
 const points = [
   {
     icon: 'camera',
-    title: 'Corrections while it still matters',
-    body: 'The camera tracks the joints that count for the movement and flags a rep the moment the angle drifts out of range.',
+    title: 'Corrections while it matters',
+    body: 'Flags the rep the moment a joint angle drifts out of range.',
   },
   {
     icon: 'activity',
     title: 'Reps counted for them',
-    body: 'No tallying on a notepad. Sets, reps and hold times are logged as they happen.',
+    body: 'Sets, reps and hold times, logged as they happen.',
   },
   {
     icon: 'phone',
-    title: 'Nothing to wear, nothing to buy',
-    body: 'A phone camera and enough floor space. No straps, no sensors, no wearables to charge.',
+    title: 'Nothing to wear',
+    body: 'A phone camera and enough floor space. No straps, sensors or wearables.',
   },
 ]
 
@@ -31,7 +31,7 @@ export default function ForPatients() {
             align="left"
             eyebrow="For patients"
             title="Like having someone in the room"
-            lead="Most people do not abandon their exercises because they stopped caring. They stop because they are not sure they are doing them right."
+            lead="Most people stop their exercises because they are not sure they are doing them right."
           />
 
           <ul className="mt-10 space-y-7">

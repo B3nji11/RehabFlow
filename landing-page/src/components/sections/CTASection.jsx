@@ -12,8 +12,7 @@ export default function CTASection() {
           Close the gap between appointments
         </h2>
         <p className="mt-4 text-lg leading-relaxed text-brand-100">
-          Set up your clinic, assign your first programme, and see what your
-          patients are actually doing at home.
+          Set up your clinic and assign your first programme.
         </p>
 
         <div className="mt-9 flex flex-wrap justify-center gap-3">

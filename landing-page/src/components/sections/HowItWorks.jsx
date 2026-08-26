@@ -7,17 +7,17 @@ const steps = [
   {
     icon: 'clipboard',
     title: 'Prescribe',
-    body: 'Build the programme in the dashboard — exercises, sets, reps, target range — and assign it to your patient in a couple of clicks.',
+    body: 'Build the programme in the dashboard and assign it to your patient.',
   },
   {
     icon: 'camera',
     title: 'Perform',
-    body: 'At home, the patient props up a phone and works through the programme. RehabFlow reads their joint angles rep by rep and cues them as they go.',
+    body: 'The patient props up a phone at home. RehabFlow reads their joint angles and cues every rep.',
   },
   {
     icon: 'chart',
     title: 'Review',
-    body: 'Adherence, form scores and flagged reps are waiting in your dashboard — so the next session starts from evidence, not recollection.',
+    body: 'Adherence, form scores and flagged reps are waiting before the next session.',
   },
 ]
 

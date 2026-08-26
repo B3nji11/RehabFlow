@@ -40,8 +40,9 @@ export const links = {
 }
 ```
 
-Replace the `#` placeholders and every CTA on the page updates. Nav items and
-footer columns are defined in the same file.
+Replace the `#` placeholders and every CTA on the page updates. Nav items,
+footer columns and the `founders` array behind the About page's leadership
+cards are defined in the same file.
 
 ## Brand
 
@@ -69,31 +70,53 @@ background, export a white version and add it as a third variant in
 
 ```
 landing-page/
-├── index.html              page shell, <title>, meta/OG tags, font preload
-├── vite.config.js
+├── index.html              home page shell (title, meta/OG, font preload)
+├── about/index.html        about page shell  ->  /about/
+├── vite.config.js          both HTML files are listed as build inputs
 ├── public/                 favicons (served as-is from the site root)
 └── src/
     ├── index.css           Tailwind import + @theme design tokens + base styles
-    ├── main.jsx            React entry
-    ├── App.jsx             section order lives here
+    ├── main.jsx  App.jsx        home page entry + section order
+    ├── about.jsx AboutPage.jsx  about page entry + section order
     ├── assets/             logo files (imported, so Vite hashes them)
     ├── config/site.js      links, nav, footer  ← edit this one
     └── components/
         ├── ui/             Button, Section, SectionHeading, Container,
-        │                   FeatureCard, Icon, Logo, Reveal (scroll animation)
-        ├── sections/       NavBar, Hero, Gap, HowItWorks, ForPatients,
-        │                   ForClinics, Technology, CTASection, Footer
+        │                   FeatureCard, FounderCard, Icon, Logo,
+        │                   Reveal (scroll animation)
+        ├── sections/       shared: NavBar, CTASection, Footer
+        │                   home:   Hero, Gap, HowItWorks, ForPatients,
+        │                           ForClinics, Technology
+        │                   about:  AboutHero, WhyWeExist, Roadmap
         └── mocks/          DashboardMock, PhoneMock — CSS/SVG product
                             illustrations, NOT screenshots
 ```
 
-Reordering the page = reordering the JSX in `App.jsx`. Adding an icon = adding
-one entry to the `paths` object in `ui/Icon.jsx` (no icon library dependency).
+Reordering a page = reordering the JSX in `App.jsx` / `AboutPage.jsx`. Adding an
+icon = adding one entry to the `paths` object in `ui/Icon.jsx` (no icon library
+dependency).
+
+### Adding another page
+
+There is no router — each page is its own HTML entry, which is why `/about/`
+survives a hard refresh with no rewrite rule on the host. To add one:
+
+1. `<name>/index.html` — copy `about/index.html`, change the title/meta and
+   point the script at `/src/<name>.jsx`
+2. `src/<name>.jsx` — copy `src/about.jsx`, render your page component
+3. `src/<Name>Page.jsx` — compose it from `components/`
+4. add one line to `input` in `vite.config.js`
+5. link to it from `config/site.js`
+
+Section anchors in `site.js` are written root-absolute (`/#how-it-works`) so the
+shared nav and footer work from every page. Keep new ones that way.
 
 ## Before this goes public
 
 - [ ] Replace the `#` placeholders in `src/config/site.js`
-- [ ] Confirm `hello@rehabflows.com` is a real inbox (used in the footer)
+- [ ] Fill in the `founders` entry in `src/config/site.js` — the placeholder
+      bio renders as literal "TODO:" text on `/about/`
+- [ ] Confirm the address in `contact.email` is a monitored inbox (footer + About page)
 - [ ] Swap `mocks/DashboardMock.jsx` and `mocks/PhoneMock.jsx` for real product
       screenshots once the dashboard and patient app exist
 - [ ] Build the About / Privacy / Terms pages, or delete those footer rows

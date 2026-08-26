@@ -7,17 +7,17 @@ const problems = [
   {
     icon: 'question',
     title: 'Patients are guessing',
-    body: 'A printed sheet or a video link cannot tell someone their knee is caving in on rep nine. Away from the clinic, small errors go uncorrected and become habits.',
+    body: 'A printed sheet cannot tell someone their form mistakes.',
   },
   {
     icon: 'calendar',
     title: 'The week in between is invisible',
-    body: 'You find out what actually happened at the next appointment, from memory. Missed sessions and bad technique only surface once progress has already stalled.',
+    body: 'You find out what happened at the next appointment, from memory.',
   },
   {
     icon: 'gauge',
     title: 'Progress is anecdotal',
-    body: 'Without objective movement data, adjusting a programme comes down to how the patient says they feel that morning.',
+    body: 'Without movement data, adjusting a programme comes down to how the patient says they feel.',
   },
 ]
 
@@ -27,8 +27,8 @@ export default function Gap() {
       <Reveal>
         <SectionHeading
           eyebrow="The problem"
-          title="The hour in your clinic isn't the hard part. The other 167 are."
-          lead="Recovery happens at home, where nobody is watching the movement and nothing is being recorded."
+          title="The hour in your clinic isn't the hard part."
+          lead="Recovery happens at home, where nothing is watched and nothing is recorded."
         />
       </Reveal>
 

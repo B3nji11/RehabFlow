@@ -25,7 +25,7 @@ export default function NavBar() {
       }`}
     >
       <Container className="flex h-16 items-center justify-between gap-6">
-        <a href="#top" aria-label="RehabFlow home">
+        <a href="/" aria-label="RehabFlow home">
           <Logo />
         </a>
 

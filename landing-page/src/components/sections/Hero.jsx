@@ -27,10 +27,9 @@ export default function Hero() {
             </h1>
 
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-600">
-              RehabFlow coaches your patients through their home exercises with
-              AI form analysis, then hands you the record &mdash; adherence,
-              form quality, the reps that went wrong &mdash; before they walk
-              back into your clinic.
+              AI form analysis coaches your patients through their home
+              exercises. Your dashboard shows what actually happened in between
+              &mdash; adherence, form quality, the reps that went wrong.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-3">

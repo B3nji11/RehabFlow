@@ -21,24 +21,66 @@ export const links = {
 }
 
 export const contact = {
-  email: 'hello@rehabflows.com', // TODO: confirm this inbox exists before launch
+  email: 'jordon.lye@rehabflows.com', // TODO: confirm this inbox exists before launch
 }
 
+// Section anchors are written root-absolute ('/#id') so the same nav works
+// from the home page and from /about/.
+/* ---------------------------------------------------------------------------
+   Leadership shown on /about/, rendered by ui/FounderCard.jsx.
+
+   photo    optional. Drop the image in src/assets, import it at the top of
+            this file, and set it here. Without one the card falls back to the
+            person's initials in a brand circle.
+   linkedin optional. Delete the key to hide the icon.
+--------------------------------------------------------------------------- */
+export const founders = [
+  {
+    name: 'Jordon Lye',
+    role: 'Founder', 
+    bio: 'XXXXXXXXXXXXXXXXXXX',
+    photo: null,
+    linkedin: '', 
+  },
+  {
+    name: 'Kaiser Ho',
+    role: 'Co-Founder',
+    bio: 'XXXXXXXXXXXXXXXXXXXX',
+    photo: null,
+    linkedin: ''
+  },
+  {
+    name: 'Aidan',
+    role: 'Co-Founder',
+    bio: 'XXXXXXXXXXXXXXXXXXXX',
+    photo: null,
+    linkedin: ''
+  },
+  {
+    name: 'Kai Jin',
+    role: 'Co-Founder',
+    bio: 'XXXXXXXXXXXXXXXXXXXX',
+    photo: null,
+    linkedin: ''
+  }
+]
+
 export const nav = [
-  { label: 'How it works', href: '#how-it-works' },
-  { label: 'For patients', href: '#for-patients' },
-  { label: 'For clinics', href: '#for-clinics' },
-  { label: 'Technology', href: '#technology' },
+  { label: 'How it works', href: '/#how-it-works' },
+  { label: 'For patients', href: '/#for-patients' },
+  { label: 'For clinics', href: '/#for-clinics' },
+  { label: 'Technology', href: '/#technology' },
+  { label: 'About', href: '/about/' }
 ]
 
 export const footerNav = [
   {
     title: 'Product',
     items: [
-      { label: 'How it works', href: '#how-it-works' },
-      { label: 'For patients', href: '#for-patients' },
-      { label: 'For clinics', href: '#for-clinics' },
-      { label: 'Technology', href: '#technology' },
+      { label: 'How it works', href: '/#how-it-works' },
+      { label: 'For patients', href: '/#for-patients' },
+      { label: 'For clinics', href: '/#for-clinics' },
+      { label: 'Technology', href: '/#technology' },
     ],
   },
   {
@@ -53,7 +95,7 @@ export const footerNav = [
     title: 'Company',
     items: [
       // TODO: build these pages, or delete the rows until they exist
-      { label: 'About', href: '#' },
+      { label: 'About', href: '/about/' },
       { label: 'Contact', href: `mailto:${contact.email}` },
       { label: 'Privacy', href: '#' },
       { label: 'Terms', href: '#' },

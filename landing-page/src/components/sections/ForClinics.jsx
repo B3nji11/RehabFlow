@@ -9,18 +9,18 @@ import { links } from '../../config/site.js'
 const points = [
   {
     icon: 'users',
-    title: 'Your whole caseload, one screen',
-    body: 'See who is keeping up and who has gone quiet, without chasing anyone for an update.',
+    title: 'Your caseload on one screen',
+    body: 'See who is keeping up and who has gone quiet.',
   },
   {
     icon: 'chart',
     title: 'Form quality over time',
-    body: 'Track how a movement is improving week to week instead of judging it from one repetition in front of you.',
+    body: 'Track a movement week to week, not from one rep in front of you.',
   },
   {
     icon: 'clipboard',
-    title: 'Adjust the programme from evidence',
-    body: 'Change sets, reps or targets based on what the data shows, and the patient sees the update on their next session.',
+    title: 'Adjust from evidence',
+    body: 'Change sets, reps or targets on what the data actually shows.',
   },
 ]
 
@@ -37,7 +37,7 @@ export default function ForClinics() {
             align="left"
             eyebrow="For physiotherapists"
             title="See the other six days of the week"
-            lead="The dashboard turns home rehab from a black box into something you can actually review before the patient sits down."
+            lead="Home rehab stops being a black box you have to ask about."
           />
 
           <ul className="mt-10 space-y-7">
